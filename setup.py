@@ -6,15 +6,11 @@ from setuptools import find_packages, setup
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-
-with open(str(pathlib.Path(__file__).parent.absolute()) +
-          "/flitton_fib_py/version.py", "r") as fh:
-    version = fh.read().split("=")[1].replace("'", "")
-
+from get_latest_version import get_latest_version_number
 
 setup(
     name="flitton_fib_py",
-    version=version,
+    version=get_latest_version_number(),
     author="Maxwell Flitton",
     author_email="maxwell@gmail.com",
     description="Calculates a Fibonacci number",
